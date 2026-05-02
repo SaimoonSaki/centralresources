@@ -149,7 +149,7 @@ const NOTES = [
 
 // ── VAULT ────────────────────────────────────────────────────────
 //  ⚠️  CHANGE THIS PASSKEY BEFORE DEPLOYING  ⚠️
-const VAULT_PASSKEY = "central2024"; // ← CHANGE THIS
+const VAULT_PASSKEY = "fuckdrive"; // ← CHANGE THIS
 
 const VAULT_BOOKS = [
   {
