@@ -22,7 +22,7 @@ const CONTRIBUTORS = [
     subjects: ["Thermodynamics", "Fluid Mechanics", "Reaction Engineering"],
     joined: "2026-04",
     note: "Isn't it cute?",
-    emoji: "https://upload.wikimedia.org/wikipedia/commons/2/23/Mountain_Goat%2C_Enchantments_Basin.jpg",
+    emoji: "under construction",
   },
   {
     id: "contributor-1",
