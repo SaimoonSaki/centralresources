@@ -39,7 +39,7 @@ const BOOKS = [
     type: "book",
     year: "2018",
     edition: "13rd Edition",
-    file: "https://mega.nz/file/fBd30b6A#9z4nLSjcJpR8OHCJb-kbmUuKmNT7ytwbQj9rVe3S1sI",
+    file: "https://mega.nz/file/Lc0iyQQI#ZVZCNaOARveEBEkI3Ylkf9B5B5ZlPh_5uRo028QMz_U",
     cover: "https://www.cengage.com/covers/imageServlet?image_type=LRGFC&catalog=cengage&productISBN13=9781337617383",
     desc: "Marco and Microeconomics to be learned from this book. GDP, GNP, Unemployment Parts will be needed to be learned from sheets or any other sources ma'am provides",
     featured: true,
