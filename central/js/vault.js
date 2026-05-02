@@ -1,5 +1,5 @@
 // vault.js
-const STORAGE_KEY = "saimoonsaki";
+const STORAGE_KEY = "goat_vault_access";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem(STORAGE_KEY) === "true") showVault();
