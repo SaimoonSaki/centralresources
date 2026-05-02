@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right">
+          <div class="logo-pub">CENTRAL RESOURCES</div>
+          <div class="logo-sub">Chemical Engineering · Open Access</div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- NOT FOUND state -->
+  <div id="profileNotFound" style="display:none;">
+    <div class="profile-notfound">
+      <div class="empty-icon">🔍</div>
+      <h2 class="profile-nf-title">Contributor not found</h2>
+      <p class="profile-nf-desc">No one by that ID exists in the archive yet.</p>
+      <a href="leaderboard.html" class="btn-primary" style="margin-top:12px;">← Back to Leaderboard</a>
+    </div>
+  </div>
+
+  <!-- PROFILE state -->
+  <div id="profilePage" style="display:none;">
+
+    <div class="profile-hero">
+      <div class="profile-hero-bg-rank" id="profileBgRank"></div>
+      <div class="profile-hero-inner">
+
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar">
+            <!--
+              Photo loads automatically from images/{contributor-id}.jpg
+              e.g. for id="rafiq" → put images/rafiq.jpg in the images/ folder
+              If no photo → emoji shows instead
+            -->
+            <img
+              id="profilePhoto"
+              class="profile-photo"
+              alt="Profile photo"
+              onerror="this.style.display='none';document.getElementById('profilePhotoFallback').style.display='flex';"
+            />
+            <div class="profile-photo-fallback" id="profilePhotoFallback">
+              <span id="profileEmoji">👤</span>
+            </div>
+          </div>
+          <div class="profile-rank-badge" id="profileRankBadge"></div>
+        </div>
+
+        <div class="profile-hero-text">
+          <div class="section-tag" id="profileRole"></div>
+          <h1 class="profile-name" id="profileName"></h1>
+          <div class="profile-joined" id="profileJoined"></div>
+          <div class="profile-subjects" id="profileSubjects"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="profile-stats-bar">
+      <div class="stat"><span class="stat-num" id="statUploads">—</span><span class="stat-label">Uploads</span></div>
+      <div class="stat-div">×</div>
+      <div class="stat"><span class="stat-num" id="statBadge">—</span><span class="stat-label">Badge</span></div>
+      <div class="stat-div">×</div>
+      <div class="stat"><span class="stat-num" id="statRank">—</span><span class="stat-label">Rank</span></div>
+      <div class="stat-div">×</div>
+      <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Impact</span></div>
+    </div>
+
+    <!-- Their quote/note -->
+    <div class="profile-note-wrap" id="profileNoteWrap" style="display:none;">
+      <div class="profile-note-inner">
+        <div class="profile-note-label">// In their own words</div>
+        <blockquote class="profile-note-text" id="profileNoteText"></blockquote>
+      </div>
+    </div>
+
+    <!-- Their uploads -->
+    <div class="profile-uploads-section">
+      <div class="profile-uploads-header">
+        <div class="section-tag">// Their Contributions</div>
+        <h2 class="section-title" id="profileUploadsTitle">Uploads</h2>
+      </div>
+      <div class="notes-grid" id="profileNotesGrid"></div>
+      <div class="empty-state" id="profileEmpty" style="display:none;">
+        <div class="empty-icon">📭</div>
+        <div class="empty-text">No uploads listed yet — check back soon.</div>
+      </div>
+    </div>
+
+    <!-- Other contributors -->
+    <div class="profile-others-section">
+      <div class="profile-others-inner">
+        <div class="section-tag">// Also Contributing</div>
+        <h2 class="section-title" style="margin-bottom:24px;">The Team</h2>
+        <div class="profile-others-grid" id="profileOthersGrid"></div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="leaderboard.html" class="btn-ghost">Full Leaderboard →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="notes.html">Notes</a>
+        <a href="vault.html">Vault</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+
+  <script src="js/catalog.js"></script>
+  <script src="js/leaderboard-data.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

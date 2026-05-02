@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div><div class="scanlines"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right"><div class="logo-pub">CENTRAL RESOURCES</div><div class="logo-sub">Chemical Engineering · Open Access</div></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link active">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page-hero slim">
+    <div class="page-hero-inner">
+      <div class="section-tag">// Community Notes</div>
+      <h1 class="page-title">Handwritten &amp; Typed Notes</h1>
+      <p class="page-desc">Notes made by real students, for real students. Each upload is credited to its author. Contribute and <a href="leaderboard.html" style="color:var(--accent)">get on the board</a>.</p>
+    </div>
+  </div>
+  <div class="library-controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search notes, contributors, topics..." />
+    </div>
+    <div class="filter-pills" id="filterPills">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="handwritten">Handwritten</button>
+      <button class="pill" data-filter="typed">Typed</button>
+      <button class="pill" data-filter="cheatsheet">Cheatsheets</button>
+      <button class="pill" data-filter="solutions">Solutions</button>
+    </div>
+  </div>
+  <div class="library-body">
+    <div class="library-count" id="notesCount">— notes</div>
+    <div class="notes-grid" id="notesGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none;"><div class="empty-icon">📝</div><div class="empty-text">No notes match your search.</div></div>
+  </div>
+  <div class="contribute-cta">
+    <div class="contribute-cta-inner">
+      <div class="contribute-icon">✍</div>
+      <div class="contribute-text">
+        <h3>Your notes belong here too.</h3>
+        <p>Made something useful? Submit it. Your name goes on the page, the board, and history.</p>
+      </div>
+      <a href="leaderboard.html" class="btn-primary">How to Contribute →</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links"><a href="library.html">Library</a><a href="notes.html">Notes</a><a href="vault.html">Vault</a><a href="leaderboard.html">Leaderboard</a><a href="feed.html">Feed</a><a href="about.html">About</a></div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+  <script src="js/catalog.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

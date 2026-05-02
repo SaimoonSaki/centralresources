@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vault — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right"><div class="logo-pub">CENTRAL RESOURCES</div><div class="logo-sub">Chemical Engineering · Open Access</div></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link active">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="vaultLocked" class="vault-locked-screen">
+    <div class="vault-door">
+      <div class="vault-door-ring ring1"></div>
+      <div class="vault-door-ring ring2"></div>
+      <div class="vault-door-ring ring3"></div>
+      <div class="vault-door-symbol">⚿</div>
+    </div>
+    <div class="vault-lock-content">
+      <div class="section-tag">// Members Only</div>
+      <h1 class="vault-lock-title">The Vault</h1>
+      <p class="vault-lock-desc">Senior notes, exclusive solution sets, and curated guides not found in the public library. Access is by passkey only.</p>
+      <div class="vault-form">
+        <div class="vault-input-wrap">
+          <span class="vault-input-icon">⚿</span>
+          <input type="password" id="passkeyInput" class="vault-input" placeholder="Enter passkey..." autocomplete="off" />
+        </div>
+        <button class="btn-vault large" onclick="tryUnlock()">Unlock →</button>
+        <div class="vault-error" id="vaultError"></div>
+      </div>
+      <div class="vault-howto">
+        <div class="vault-howto-title">Don't have the passkey?</div>
+        <p>Get to know us first. Come to the study sessions, contribute to the community. The key gets shared person to person — not posted publicly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="vaultUnlocked" style="display:none;">
+    <div class="page-hero slim vault-hero">
+      <div class="page-hero-inner">
+        <div class="vault-unlocked-badge">✓ VAULT ACCESS GRANTED</div>
+        <h1 class="page-title">The Vault</h1>
+        <p class="page-desc">You're in. Don't share these files publicly — keep the circle tight.</p>
+        <button class="btn-ghost small" onclick="lockVault()" style="margin-top:12px;">🔒 Lock &amp; Exit</button>
+      </div>
+    </div>
+    <div class="library-controls">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="vaultSearch" class="search-input" placeholder="Search vault..." />
+      </div>
+      <div class="filter-pills" id="vaultPills">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="senior-notes">Senior Notes</button>
+        <button class="pill" data-filter="solutions">Solutions</button>
+        <button class="pill" data-filter="advanced">Advanced</button>
+        <button class="pill" data-filter="past-papers">Past Papers</button>
+        <button class="pill" data-filter="other">Other</button>
+      </div>
+    </div>
+    <div class="library-body">
+      <div class="library-count" id="vaultItemCount">— items</div>
+      <div class="library-grid vault-grid" id="vaultGrid"></div>
+      <div class="empty-state" id="vaultEmpty" style="display:none;"><div class="empty-icon">🔐</div><div class="empty-text">Nothing matches your search.</div></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links"><a href="library.html">Library</a><a href="notes.html">Notes</a><a href="vault.html">Vault</a><a href="leaderboard.html">Leaderboard</a><a href="about.html">About</a></div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+  <script src="js/catalog.js"></script>
+  <script src="js/vault.js"></script>
+</body>
+</html>

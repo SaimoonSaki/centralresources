@@ -1,0 +1,18 @@
+DROP YOUR BOOK COVER IMAGES HERE.
+
+Naming: anything you like, e.g. smith-thermo.jpg, fogler.jpg
+
+Then in catalog.js, set the cover field like this:
+  cover: "covers/smith-thermo.jpg"
+
+Supported formats: .jpg  .jpeg  .png  .webp
+
+Tips:
+- Square or portrait images work best (book cover shape)
+- Keep file size under 200KB for fast loading
+- If no image uploaded, emoji or fallback shows automatically
+
+Alternative — use Open Library covers (no upload needed):
+  cover: "https://covers.openlibrary.org/b/isbn/YOUR_ISBN-L.jpg"
+  e.g.   "https://covers.openlibrary.org/b/isbn/9780073529264-L.jpg"
+  Find the ISBN by googling: "book title ISBN"

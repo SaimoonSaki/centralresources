@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right"><div class="logo-pub">CENTRAL RESOURCES</div><div class="logo-sub">Chemical Engineering · Open Access</div></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link active">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page-hero slim lb-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">// Hall of Fame</div>
+      <h1 class="page-title lb-page-title">Contributor<br/>Leaderboard</h1>
+      <p class="page-desc">These are the people keeping Central Resources alive. Every note uploaded, every guide written — it all counts.</p>
+    </div>
+    <div class="lb-hero-num" aria-hidden="true">01</div>
+  </div>
+  <div class="podium-section" id="podiumSection"></div>
+  <div class="lb-body">
+    <div class="lb-table-header">
+      <span class="lb-th rank">Rank</span>
+      <span class="lb-th name">Contributor</span>
+      <span class="lb-th uploads">Uploads</span>
+      <span class="lb-th badge">Badge</span>
+      <span class="lb-th joined">Joined</span>
+    </div>
+    <div id="lbTable"></div>
+  </div>
+  <div class="lb-howto-section" id="howto">
+    <div class="lb-howto-inner">
+      <div class="section-tag">// Join the Board</div>
+      <h2 class="section-title">Want your name up here?</h2>
+      <div class="howto-steps">
+        <div class="howto-step">
+          <div class="step-num">01</div>
+          <div class="step-text"><strong>Write notes or scan handwritten ones</strong><p>Notes for any ChE subject — clean handwritten, typed, or digital. Your work, your style.</p></div>
+        </div>
+        <div class="howto-step">
+          <div class="step-num">02</div>
+          <div class="step-text"><strong>Send them to us</strong><p>Drop a message with your PDF attached. We review, clean up if needed, and upload it under your name.</p></div>
+        </div>
+        <div class="howto-step">
+          <div class="step-num">03</div>
+          <div class="step-text"><strong>Get on the board + earn Vault access</strong><p>Your name goes on the leaderboard. Contribute enough and you get permanent Vault access.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links"><a href="library.html">Library</a><a href="notes.html">Notes</a><a href="vault.html">Vault</a><a href="leaderboard.html">Leaderboard</a><a href="about.html">About</a></div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+  <script src="js/leaderboard-data.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

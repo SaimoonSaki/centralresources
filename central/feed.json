@@ -1,0 +1,106 @@
+{
+  "lastUpdated": "2025-04-29T06:00:00Z",
+  "source": "GOAT Publications AI Feed Agent",
+  "items": [
+    {
+      "id": "aiche-2025-annual",
+      "title": "AiChE 2025 Annual Meeting: Sustainable Process Design Takes Centre Stage",
+      "source": "AiChE",
+      "category": "News",
+      "date": "2025-04-28",
+      "summary": "AiChE has announced the keynote programme for its 2025 Annual Meeting in Atlanta. This year's theme focuses on sustainable process design, green hydrogen production, and carbon capture technologies — areas seeing explosive growth in industry investment.",
+      "url": "https://www.aiche.org/conferences/aiche-annual-meeting/2025",
+      "tags": ["AiChE", "conference", "sustainability", "green hydrogen"]
+    },
+    {
+      "id": "bd-bashundhara-job-1",
+      "title": "Chemical Engineer (Process) — Bashundhara Group, Dhaka",
+      "source": "BDJOBS",
+      "category": "Jobs",
+      "date": "2025-04-27",
+      "summary": "Bashundhara Group is seeking a Chemical Engineer with 2+ years of process operations experience. Responsibilities include process optimisation, safety compliance, and production reporting. Competitive salary with benefits. Based in Narayanganj industrial zone.",
+      "url": "https://www.bdjobs.com",
+      "tags": ["jobs", "bangladesh", "bd", "Dhaka", "process engineering", "Bashundhara"]
+    },
+    {
+      "id": "nature-chem-co2",
+      "title": "New Catalyst Achieves Record CO₂-to-Methanol Conversion Efficiency",
+      "source": "Nature Chemistry",
+      "category": "Research",
+      "date": "2025-04-26",
+      "summary": "Researchers at ETH Zurich have developed a copper-zinc oxide catalyst that converts CO₂ to methanol at 94% selectivity under mild conditions — a significant leap over current industrial processes. The work could accelerate carbon-neutral fuel production at scale.",
+      "url": "https://www.nature.com/nchem",
+      "tags": ["CO2", "catalyst", "methanol", "carbon capture", "research"]
+    },
+    {
+      "id": "bd-fertilizer-industry",
+      "title": "Bangladesh Fertilizer Industry Eyes Capacity Expansion Amid Global Demand",
+      "source": "The Daily Star",
+      "category": "Industry",
+      "date": "2025-04-25",
+      "summary": "Bangladesh's fertilizer sector is planning a significant capacity expansion, driven by rising global agricultural demand and government push for domestic production. BCIC is reportedly in talks with Chinese and Japanese firms for new urea plant construction in Chittagong.",
+      "url": "https://www.thedailystar.net",
+      "tags": ["bangladesh", "bd", "fertilizer", "BCIC", "industry", "Chittagong"]
+    },
+    {
+      "id": "chem-eng-ai-design",
+      "title": "AI-Assisted Process Design Cuts Plant Development Time by 40%",
+      "source": "Chemical Engineering Online",
+      "category": "News",
+      "date": "2025-04-24",
+      "summary": "A new study published in Chemical Engineering Journal shows that AI-assisted process simulation tools are reducing plant design timelines by up to 40%. The tools use machine learning to optimise heat exchanger networks, reactor sizing, and separation sequences simultaneously.",
+      "url": "https://www.chemengonline.com",
+      "tags": ["AI", "process design", "simulation", "industry 4.0"]
+    },
+    {
+      "id": "bd-graduate-trainee",
+      "title": "Graduate Trainee Engineer — Square Pharmaceuticals, Dhaka",
+      "source": "BDJOBS",
+      "category": "Jobs",
+      "date": "2025-04-23",
+      "summary": "Square Pharmaceuticals Ltd is recruiting Graduate Trainee Engineers from Chemical Engineering backgrounds. Fresh graduates welcome. Training programme covers GMP compliance, pharmaceutical manufacturing, and process validation. Location: Pabna manufacturing facility.",
+      "url": "https://www.bdjobs.com",
+      "tags": ["jobs", "bangladesh", "bd", "Square Pharmaceuticals", "graduate", "pharma"]
+    },
+    {
+      "id": "hydrogen-electrolyser",
+      "title": "Green Hydrogen Costs Fall Below $2/kg for First Time in Pilot Project",
+      "source": "Chemical Engineering Journal",
+      "category": "Research",
+      "date": "2025-04-22",
+      "summary": "A pilot electrolyser project in Norway has achieved green hydrogen production costs below $2/kg — widely considered the threshold for industrial competitiveness with grey hydrogen. The project uses next-generation proton exchange membrane (PEM) technology with improved membrane durability.",
+      "url": "https://www.sciencedirect.com/journal/chemical-engineering-journal",
+      "tags": ["hydrogen", "electrolyser", "PEM", "renewable energy", "research"]
+    },
+    {
+      "id": "bd-cement-plant",
+      "title": "Shah Cement Begins Construction of New Clinker Production Line in Munshiganj",
+      "source": "The Daily Star",
+      "category": "Industry",
+      "date": "2025-04-21",
+      "summary": "Shah Cement Industries has broken ground on a new 4,500 tonne-per-day clinker production line at its Munshiganj facility. The $180 million project is expected to boost Bangladesh's domestic cement production capacity by 15% upon completion in 2027.",
+      "url": "https://www.thedailystar.net",
+      "tags": ["bangladesh", "bd", "cement", "Shah Cement", "Munshiganj", "industry"]
+    },
+    {
+      "id": "plastic-recycling-chem",
+      "title": "Chemical Recycling Breakthrough Turns Mixed Plastic Waste into Virgin-Quality Feedstock",
+      "source": "AiChE",
+      "category": "News",
+      "date": "2025-04-20",
+      "summary": "A California startup backed by ExxonMobil has demonstrated a pyrolysis-based chemical recycling process that converts mixed post-consumer plastic waste into naphtha and pyrolysis oil indistinguishable from virgin feedstock. The process handles PET, HDPE, and polystyrene simultaneously.",
+      "url": "https://www.aiche.org",
+      "tags": ["recycling", "plastic", "pyrolysis", "circular economy", "sustainability"]
+    },
+    {
+      "id": "bd-process-engineer-job",
+      "title": "Senior Process Engineer — Meghna Petroleum Ltd, Chittagong",
+      "source": "Indeed BD",
+      "category": "Jobs",
+      "date": "2025-04-19",
+      "summary": "Meghna Petroleum is hiring a Senior Process Engineer with 5+ years experience in refinery or petrochemical operations. Must have expertise in process simulation (Aspen HYSYS preferred), PHA/HAZOP facilitation, and knowledge of API standards. Attractive package with housing allowance.",
+      "url": "https://bd.indeed.com",
+      "tags": ["jobs", "bangladesh", "bd", "Chittagong", "petroleum", "refinery", "senior"]
+    }
+  ]
+}

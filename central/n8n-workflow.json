@@ -1,0 +1,267 @@
+{
+  "name": "GOAT Publications — ChE News Feed Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "hours", "hoursInterval": 6 }]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://www.aiche.org/rss.xml",
+        "options": {}
+      },
+      "id": "rss-aiche",
+      "name": "AiChE RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://www.chemengonline.com/feed/",
+        "options": {}
+      },
+      "id": "rss-chemeng",
+      "name": "Chem Eng Online RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 220]
+    },
+    {
+      "parameters": {
+        "url": "https://feeds.feedburner.com/acs/anchem",
+        "options": {}
+      },
+      "id": "rss-nature",
+      "name": "Chemistry Research RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 340]
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/search?q=chemical+engineering+Bangladesh+industry&hl=en-BD&gl=BD&ceid=BD:en",
+        "options": {}
+      },
+      "id": "rss-bd-industry",
+      "name": "Bangladesh Industry News RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 460]
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/search?q=chemical+engineer+job+Bangladesh&hl=en-BD&gl=BD&ceid=BD:en",
+        "options": {}
+      },
+      "id": "rss-bd-jobs",
+      "name": "Bangladesh ChE Jobs RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 580]
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/search?q=chemical+engineering+research+2025&hl=en&gl=US&ceid=US:en",
+        "options": {}
+      },
+      "id": "rss-research",
+      "name": "ChE Research News RSS",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [480, 700]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      },
+      "id": "merge-feeds",
+      "name": "Merge All Feeds",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [760, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Deduplicate and prepare articles for AI processing\nconst seen = new Set();\nconst cutoffDate = new Date();\ncutoffDate.setDate(cutoffDate.getDate() - 7); // only last 7 days\n\nconst cleaned = [];\n\nfor (const item of $input.all()) {\n  const url = item.json.link || item.json.url || '';\n  const title = item.json.title || '';\n  \n  // Skip if already seen (dedup by URL)\n  if (seen.has(url) || !url || !title) continue;\n  seen.add(url);\n  \n  // Skip if older than 7 days\n  const pubDate = item.json.pubDate || item.json.isoDate || item.json.date;\n  if (pubDate) {\n    const articleDate = new Date(pubDate);\n    if (articleDate < cutoffDate) continue;\n  }\n  \n  // Skip very short titles (usually junk)\n  if (title.length < 15) continue;\n  \n  cleaned.push({\n    json: {\n      title: title.substring(0, 200),\n      url: url,\n      description: (item.json.contentSnippet || item.json.summary || item.json.content || '').substring(0, 500),\n      date: pubDate || new Date().toISOString(),\n      sourceName: item.json.meta?.title || item.json.source || 'Unknown'\n    }\n  });\n}\n\n// Limit to 50 most recent to stay within Gemini token limits\nreturn cleaned.slice(0, 50);"
+      },
+      "id": "deduplicate",
+      "name": "Deduplicate & Clean",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [980, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "={{ $vars.GEMINI_API_KEY }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "body": {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "=You are a news editor for GOAT Publications, a Chemical Engineering student publication in Bangladesh.\n\nAnalyse this article and return ONLY a valid JSON object (no markdown, no backticks, no explanation):\n\nTitle: {{ $json.title }}\nDescription: {{ $json.description }}\nURL: {{ $json.url }}\nSource: {{ $json.sourceName }}\n\nReturn this exact JSON structure:\n{\n  \"id\": \"unique-slug-from-title-max-30-chars\",\n  \"title\": \"clean article title, max 100 chars\",\n  \"source\": \"source name\",\n  \"category\": \"one of: News, Research, Industry, Jobs\",\n  \"date\": \"{{ $json.date }}\",\n  \"summary\": \"2-3 sentence plain English summary relevant to ChE students in Bangladesh. Max 250 chars.\",\n  \"url\": \"{{ $json.url }}\",\n  \"tags\": [\"3-5 relevant lowercase tags, include 'bangladesh' or 'bd' if relevant\"]\n}\n\nRules:\n- category Jobs: if it mentions job, career, hiring, vacancy, position\n- category Research: if it mentions study, research, paper, journal, breakthrough\n- category Industry: if it mentions plant, factory, company, production, market\n- category News: everything else\n- Always include 'bangladesh' or 'bd' tag if the article is about Bangladesh\n- Keep summary factual and useful to a ChE student\n- Return ONLY the JSON object, nothing else"
+                }
+              ]
+            }
+          ],
+          "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 400
+          }
+        },
+        "options": {}
+      },
+      "id": "gemini-categorize",
+      "name": "Gemini — Categorize & Summarize",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1200, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Gemini response and extract the JSON article object\nconst results = [];\n\nfor (const item of $input.all()) {\n  try {\n    // Get the text from Gemini's response\n    const text = item.json.candidates?.[0]?.content?.parts?.[0]?.text || '';\n    \n    // Clean up any accidental markdown\n    const cleaned = text.replace(/```json/g, '').replace(/```/g, '').trim();\n    \n    // Parse the JSON\n    const article = JSON.parse(cleaned);\n    \n    // Validate required fields\n    if (article.title && article.url && article.category) {\n      results.push({ json: article });\n    }\n  } catch (e) {\n    // Skip malformed responses silently\n    console.log('Skipping malformed Gemini response:', e.message);\n  }\n}\n\nreturn results;"
+      },
+      "id": "parse-gemini",
+      "name": "Parse Gemini Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1420, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all processed articles into a single feed.json structure\nconst articles = $input.all().map(item => item.json);\n\n// Remove duplicates by URL (belt and suspenders)\nconst seen = new Set();\nconst unique = articles.filter(a => {\n  if (seen.has(a.url) || !a.url) return false;\n  seen.add(a.url);\n  return true;\n});\n\n// Sort newest first\nunique.sort((a, b) => new Date(b.date) - new Date(a.date));\n\nconst feedData = {\n  lastUpdated: new Date().toISOString(),\n  source: 'GOAT Publications AI Feed Agent — Powered by Gemini',\n  totalItems: unique.length,\n  items: unique\n};\n\nreturn [{ json: feedData }];"
+      },
+      "id": "build-feed-json",
+      "name": "Build feed.json",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1640, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Convert the feed data to a base64-encoded string for GitHub API\nconst feedData = $input.first().json;\nconst jsonString = JSON.stringify(feedData, null, 2);\nconst base64Content = Buffer.from(jsonString).toString('base64');\n\nreturn [{\n  json: {\n    feedData: feedData,\n    base64Content: base64Content,\n    message: `Auto-update: ChE Feed — ${feedData.totalItems} articles — ${new Date().toUTCString()}`\n  }\n}];"
+      },
+      "id": "encode-for-github",
+      "name": "Encode for GitHub",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1860, 400]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $vars.GITHUB_USERNAME }}/{{ $vars.GITHUB_REPO }}/contents/feed.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $vars.GITHUB_TOKEN }}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-current-sha",
+      "name": "Get Current feed.json SHA",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2080, 400]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $vars.GITHUB_USERNAME }}/{{ $vars.GITHUB_REPO }}/contents/feed.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $vars.GITHUB_TOKEN }}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "body": {
+          "message": "={{ $('Encode for GitHub').first().json.message }}",
+          "content": "={{ $('Encode for GitHub').first().json.base64Content }}",
+          "sha": "={{ $json.sha }}"
+        },
+        "options": {}
+      },
+      "id": "push-to-github",
+      "name": "Push feed.json to GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2300, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const result = $input.first().json;\nconst commit = result.commit?.sha?.substring(0, 7) || 'unknown';\nconst articles = $('Build feed.json').first().json.totalItems;\n\nconsole.log(`✅ GOAT Feed updated successfully!`);\nconsole.log(`📰 Articles: ${articles}`);\nconsole.log(`🔗 Commit: ${commit}`);\nconsole.log(`⏰ Time: ${new Date().toUTCString()}`);\nconsole.log(`🚀 Netlify will auto-deploy in ~30 seconds`);\n\nreturn [{ json: { success: true, articles, commit, timestamp: new Date().toISOString() } }];"
+      },
+      "id": "log-success",
+      "name": "Log Success",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2520, 400]
+    }
+  ],
+  "connections": {
+    "Every 6 Hours": {
+      "main": [[
+        { "node": "AiChE RSS", "type": "main", "index": 0 },
+        { "node": "Chem Eng Online RSS", "type": "main", "index": 0 },
+        { "node": "Chemistry Research RSS", "type": "main", "index": 0 },
+        { "node": "Bangladesh Industry News RSS", "type": "main", "index": 0 },
+        { "node": "Bangladesh ChE Jobs RSS", "type": "main", "index": 0 },
+        { "node": "ChE Research News RSS", "type": "main", "index": 0 }
+      ]]
+    },
+    "AiChE RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 0 }]] },
+    "Chem Eng Online RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 1 }]] },
+    "Chemistry Research RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 2 }]] },
+    "Bangladesh Industry News RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 3 }]] },
+    "Bangladesh ChE Jobs RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 4 }]] },
+    "ChE Research News RSS": { "main": [[{ "node": "Merge All Feeds", "type": "main", "index": 5 }]] },
+    "Merge All Feeds": { "main": [[{ "node": "Deduplicate & Clean", "type": "main", "index": 0 }]] },
+    "Deduplicate & Clean": { "main": [[{ "node": "Gemini — Categorize & Summarize", "type": "main", "index": 0 }]] },
+    "Gemini — Categorize & Summarize": { "main": [[{ "node": "Parse Gemini Response", "type": "main", "index": 0 }]] },
+    "Parse Gemini Response": { "main": [[{ "node": "Build feed.json", "type": "main", "index": 0 }]] },
+    "Build feed.json": { "main": [[{ "node": "Encode for GitHub", "type": "main", "index": 0 }]] },
+    "Encode for GitHub": { "main": [[{ "node": "Get Current feed.json SHA", "type": "main", "index": 0 }]] },
+    "Get Current feed.json SHA": { "main": [[{ "node": "Push feed.json to GitHub", "type": "main", "index": 0 }]] },
+    "Push feed.json to GitHub": { "main": [[{ "node": "Log Success", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": ["GOAT Publications", "ChE Feed", "AI Agent"],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-29T00:00:00.000Z",
+  "versionId": "1"
+}

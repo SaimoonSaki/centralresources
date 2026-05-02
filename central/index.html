@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">Central</div>
+        <div class="logo-right">
+          <div class="logo-pub">Resources</div>
+          <div class="logo-sub">By Saimoon Saki</div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-stamp">OPEN<br/>ACCESS</div>
+    <div class="hero-content">
+      <div class="hero-issue">everything · all at once · in a single place · Constantly updating</div>
+      <h1 class="hero-title">Central<br/>Resources</h1>
+      <p class="hero-tagline">Putting a fullstop in finding Resources in groups and drives like needls in hay. Search in here, it will come
+        with additional details that's all. Even all the notes.
+      </p>
+      <p class="hero-asterisk">and vault is for gatekeeping contents from juniors who haven't gotten introduced</p>
+      <div class="hero-cta-row">
+        <a href="library.html" class="btn-primary">Enter the Library →</a>
+        <a href="vault.html" class="btn-vault">⚿ Access Vault</a>
+        <a href="leaderboard.html" class="btn-ghost">Contribution Leaderboard</a>
+      </div>
+    </div>
+    <div class="hero-ticker">
+      <div class="ticker-inner">
+        <span>Free Downloads</span><span class="dot">✦</span>
+        <span>Central Resources</span><span class="dot">✦</span>
+        <span>ChE Archive</span><span class="dot">✦</span>
+        <span>Open Access</span><span class="dot">✦</span>
+        <span>Thermodynamics</span><span class="dot">✦</span>
+        <span>Fluid Mechanics</span><span class="dot">✦</span>
+        <span>Reaction Engineering</span><span class="dot">✦</span>
+        <span>For the Students</span><span class="dot">✦</span>
+        <span>Free Downloads</span><span class="dot">✦</span>
+        <span>Central Resources</span><span class="dot">✦</span>
+        <span>ChE Archive</span><span class="dot">✦</span>
+        <span>Open Access</span><span class="dot">✦</span>
+        <span>Thermodynamics</span><span class="dot">✦</span>
+        <span>Fluid Mechanics</span><span class="dot">✦</span>
+        <span>Reaction Engineering</span><span class="dot">✦</span>
+        <span>For the Students</span><span class="dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num" id="bookCount">—</span><span class="stat-label">Books</span></div>
+    <div class="stat-div">×</div>
+    <div class="stat"><span class="stat-num" id="noteCount">—</span><span class="stat-label">Notes</span></div>
+    <div class="stat-div">×</div>
+    <div class="stat"><span class="stat-num" id="vaultCount">—</span><span class="stat-label">Vault Files</span></div>
+    <div class="stat-div">×</div>
+    <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Downloads</span></div>
+    <div class="stat-div">×</div>
+    <div class="stat"><span class="stat-num">£0</span><span class="stat-label">Cost to You</span></div>
+  </div>
+
+  <section class="section-block">
+    <div class="section-header">
+      <span class="section-tag">// Recently Added</span>
+      <h2 class="section-title">Fresh Drop</h2>
+    </div>
+    <div class="card-grid" id="featuredGrid"></div>
+    <div class="section-cta"><a href="library.html" class="btn-primary">Full Library →</a></div>
+  </section>
+
+  <section class="vault-teaser">
+    <div class="vault-teaser-inner">
+      <div class="vault-icon-big">⚿</div>
+      <div class="vault-teaser-text">
+        <div class="section-tag">// Members Only</div>
+        <h2 class="vault-teaser-title">The Vault</h2>
+        <p>Some things aren't for everyone. Senior notes, exclusive solution sets, advanced guides — these live behind a passkey. Get to know us first, then you'll get the key.</p>
+        <a href="vault.html" class="btn-vault">Request Access →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-header">
+      <span class="section-tag">// Hall of Fame</span>
+      <h2 class="section-title">Top Contributors</h2>
+    </div>
+    <div class="lb-preview" id="lbPreview"></div>
+    <div class="section-cta"><a href="leaderboard.html" class="btn-ghost">Full Leaderboard →</a></div>
+  </section>
+
+  <section class="about-strip">
+    <div class="about-strip-inner">
+      <blockquote class="about-quote">"The best<br/><em>share what</em><br/>they know."</blockquote>
+      <div class="about-body">
+        <p>Central Resources started as one person's notes folder. Now it's a community archive for Chemical Engineering students. Everything is free. The Vault rewards those who contribute. The leaderboard keeps count of who's putting in work.</p>
+        <a href="about.html" class="btn-ghost">Our Story →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="notes.html">Notes</a>
+        <a href="vault.html">Vault</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="feed.html">Feed</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">Built by Claude. Idea and executed by Saki. Collection help by Majed.</div>
+    </div>
+  </footer>
+
+  <script src="js/catalog.js"></script>
+  <script src="js/leaderboard-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

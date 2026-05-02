@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right">
+          <div class="logo-pub">CENTRAL RESOURCES</div>
+          <div class="logo-sub">Chemical Engineering · Open Access</div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+  ═══════════════════════════════════════════════════
+   PERSONALISE THIS — 6 things to change:
+   1. Drop your photo as:  images/founder.jpg
+   2. Change "Your Name Here" below
+   3. Change "Founder · ChE Year 3" below
+   4. Change the quote text inside <blockquote>
+   5. Change the sign-off line (.founder-quote-sig)
+   6. Change the bio paragraph text
+  ═══════════════════════════════════════════════════
+  -->
+  <section class="founder-hero">
+    <div class="founder-hero-inner">
+
+      <div class="founder-photo-col">
+        <div class="founder-photo-frame">
+          <img
+            src="images/founder.jpg"
+            alt="Founder"
+            class="founder-photo"
+            onerror="this.style.display='none';document.getElementById('founderFallback').style.display='flex';"
+          />
+          <div class="founder-photo-fallback" id="founderFallback">🐐</div>
+        </div>
+        <div class="founder-label">
+          <div class="founder-name-tag">Your Name Here</div><!-- ← CHANGE THIS -->
+          <div class="founder-role-tag">Founder · ChE Year 3</div><!-- ← CHANGE THIS -->
+        </div>
+      </div>
+
+      <div class="founder-quote-col">
+        <div class="founder-open-quote">"</div>
+        <!-- ↓ CHANGE THIS QUOTE TO YOUR OWN WORDS -->
+        <blockquote class="founder-quote-text">
+          Knowledge locked behind a paywall is knowledge wasted.
+          I built this so no junior has to figure it out alone.
+        </blockquote>
+        <!-- ↓ CHANGE THE SIGN-OFF -->
+        <div class="founder-quote-sig">— Your Name, Founder of Central Resources</div>
+        <div class="founder-bio">
+          <!-- ↓ CHANGE THIS BIO -->
+          <p>I'm a Chemical Engineering student who also builds things for the web. I started making notes for myself — scanning chapters, typing up solutions, writing guides before exams. At some point I had a folder of genuinely useful stuff just sitting there.</p>
+          <p>So I built Central Resources. Free, open, forever.</p>
+        </div>
+        <div class="founder-cta-row">
+          <a href="library.html" class="btn-primary">Browse Library →</a>
+          <a href="leaderboard.html" class="btn-ghost">Meet the Team</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="about-page">
+    <div class="about-page-inner">
+      <div class="about-layout">
+
+        <div class="about-main">
+          <h2>Why GOAT?</h2>
+          <p>Greatest Of All Time — that's the bar we set for what goes in here. Not every PDF floating around the internet, but the ones that actually help. Curated, credited, and free.</p>
+
+          <h2>The Vault</h2>
+          <p>Not everything should be free to everyone immediately. The Vault is where the premium stuff lives — senior notes, advanced solution sets, exclusive guides. Access is by passkey, shared person-to-person. You earn it by getting involved with the community.</p>
+          <p>This isn't gatekeeping for gatekeeping's sake. It's about making sure the people who get the really good stuff are the ones who are actually trying to learn.</p>
+
+          <h2>The Leaderboard</h2>
+          <p>The community is what keeps this place alive. Every contributor who uploads notes gets credited — name on the page, name on the board, permanently. Contribute enough and you get Vault access.</p>
+
+          <h2>Shoutout 📣</h2>
+          <p>This site was designed and built with help from <strong>Claude (Anthropic)</strong>. Coded the whole thing while I focused on the content. Respect to the AI, for real.</p>
+
+          <h2>The Stack</h2>
+          <p>Pure HTML, CSS, and vanilla JavaScript. No framework, no backend, no database. Hosted free on Netlify. The "CMS" is a JavaScript file you edit by hand — simplicity means it'll never break and never cost money.</p>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">How to get Vault access</div>
+            <div class="vault-steps">
+              <div class="vstep"><span class="vstep-n">1</span><span>Get involved — come to sessions, contribute</span></div>
+              <div class="vstep"><span class="vstep-n">2</span><span>Upload notes or resources</span></div>
+              <div class="vstep"><span class="vstep-n">3</span><span>The key gets passed to you directly</span></div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">The Tech Stack</div>
+            <div class="tech-list">
+              <div class="tech-item"><span class="tech-dot"></span>HTML / CSS / Vanilla JS</div>
+              <div class="tech-item"><span class="tech-dot"></span>Zero backend, zero cost</div>
+              <div class="tech-item"><span class="tech-dot"></span>Netlify (free hosting)</div>
+              <div class="tech-item"><span class="tech-dot"></span>PDFs in /books folder</div>
+              <div class="tech-item"><span class="tech-dot"></span>catalog.js = your CMS</div>
+            </div>
+          </div>
+          <div class="sidebar-card highlight-card">
+            <div class="sidebar-card-title">Open Source</div>
+            <p style="font-size:0.82rem;line-height:1.6;margin:0;opacity:0.85;">Fork it. Build your own version. Just link back to GOAT.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="notes.html">Notes</a>
+        <a href="vault.html">Vault</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+</body>
+</html>

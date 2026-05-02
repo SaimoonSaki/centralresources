@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right"><div class="logo-pub">CENTRAL RESOURCES</div><div class="logo-sub">Chemical Engineering · Open Access</div></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link active">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero slim">
+    <div class="page-hero-inner">
+      <div class="section-tag">// The Archive</div>
+      <h1 class="page-title">Library</h1>
+      <p class="page-desc">Textbooks, references, solution manuals. All free, all downloadable, no strings attached.</p>
+    </div>
+  </div>
+
+  <div class="library-controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, subject, tags..." />
+    </div>
+    <!--
+      ADD OR REMOVE SUBJECT PILLS HERE.
+      data-filter must exactly match the "subject" field in catalog.js
+    -->
+    <div class="filter-pills" id="filterPills">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="thermodynamics">Thermodynamics</button>
+      <button class="pill" data-filter="fluid-mechanics">Fluid Mechanics</button>
+      <button class="pill" data-filter="heat-transfer">Heat Transfer</button>
+      <button class="pill" data-filter="mass-transfer">Mass Transfer</button>
+      <button class="pill" data-filter="reaction-engineering">Reaction Eng.</button>
+      <button class="pill" data-filter="Economics">Economics</button>
+      <button class="pill" data-filter="transport-phenomena">Transport Phenomena</button>
+      <button class="pill" data-filter="process-design">Process Design</button>
+      <button class="pill" data-filter="instrumentation">Instrumentation</button>
+      <button class="pill" data-filter="environmental">Environmental</button>
+      <button class="pill" data-filter="biochemical">Biochemical Eng.</button>
+      <button class="pill" data-filter="polymer">Polymer Science</button>
+      <button class="pill" data-filter="mathematics">Engineering Math</button>
+      <button class="pill" data-filter="chemistry">Chemistry</button>
+      <button class="pill" data-filter="other">Other</button>
+    </div>
+  </div>
+
+  <div class="library-body">
+    <div class="library-count" id="libraryCount">— items</div>
+    <div class="library-grid" id="libraryGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <div class="empty-icon">🔬</div>
+      <div class="empty-text">Nothing found. Try different keywords.</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links">
+        <a href="library.html">Library</a><a href="notes.html">Notes</a>
+        <a href="vault.html">Vault</a><a href="leaderboard.html">Leaderboard</a>
+        <a href="feed.html">Feed</a><a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+  <script src="js/catalog.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/library.js"></script>
+</body>
+</html>

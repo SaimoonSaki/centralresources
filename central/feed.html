@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed — Central Resources</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-block">
+        <div class="logo-goat">CR</div>
+        <div class="logo-right">
+          <div class="logo-pub">CENTRAL RESOURCES</div>
+          <div class="logo-sub">Chemical Engineering · Open Access</div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="vault.html" class="nav-link vault-link">⚿ Vault</a>
+        <a href="leaderboard.html" class="nav-link lb-link">⬆ Board</a>
+        <a href="feed.html" class="nav-link feed-link active">📡 Feed</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="page-hero slim feed-hero">
+    <div class="page-hero-inner">
+      <div class="section-tag">// Live Intelligence</div>
+      <h1 class="page-title">ChE Feed</h1>
+      <p class="page-desc">Latest news, research, industry updates and jobs — pulled automatically from global ChE sources and Bangladesh industry. Updated every 6 hours by an AI agent.</p>
+      <div class="feed-hero-meta">
+        <span class="feed-live-dot"></span>
+        <span class="feed-last-updated" id="feedLastUpdated">Checking for updates...</span>
+        <span class="feed-divider">·</span>
+        <span class="feed-count" id="feedTotalCount">—</span> articles
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="library-controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="feedSearch" class="search-input" placeholder="Search news, jobs, research..." />
+    </div>
+    <div class="filter-pills" id="feedPills">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="News">📰 News</button>
+      <button class="pill" data-filter="Research">🔬 Research</button>
+      <button class="pill" data-filter="Industry">🏭 Industry</button>
+      <button class="pill" data-filter="Jobs">💼 Jobs</button>
+      <button class="pill" data-filter="Bangladesh">🇧🇩 Bangladesh</button>
+    </div>
+  </div>
+
+  <!-- Feed body -->
+  <div class="library-body">
+    <div class="library-count" id="feedCount">— articles</div>
+
+    <!-- Loading state -->
+    <div class="feed-loading" id="feedLoading">
+      <div class="feed-loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="feed-loading-text">Fetching latest updates...</div>
+    </div>
+
+    <!-- Error state -->
+    <div class="feed-error" id="feedError" style="display:none;">
+      <div class="empty-icon">📡</div>
+      <div class="feed-error-title">Feed not connected yet</div>
+      <div class="feed-error-desc">The AI agent hasn't pushed any news yet. Once you set up n8n and run the workflow, articles will appear here automatically. See the setup guide in README.md.</div>
+    </div>
+
+    <!-- Feed grid -->
+    <div class="feed-grid" id="feedGrid" style="display:none;"></div>
+
+    <!-- Empty search state -->
+    <div class="empty-state" id="feedEmpty" style="display:none;">
+      <div class="empty-icon">🔍</div>
+      <div class="empty-text">No articles match your search.</div>
+    </div>
+  </div>
+
+  <!-- Source strip -->
+  <div class="feed-sources-strip">
+    <div class="feed-sources-inner">
+      <div class="section-tag">// Monitoring These Sources</div>
+      <div class="feed-sources-grid">
+        <div class="source-chip"><span>🌐</span> AiChE News</div>
+        <div class="source-chip"><span>🔬</span> Chemical Engineering Journal</div>
+        <div class="source-chip"><span>🧪</span> Nature Chemistry</div>
+        <div class="source-chip"><span>🏭</span> Chem Eng Online</div>
+        <div class="source-chip"><span>🇧🇩</span> Bangladesh Industry News</div>
+        <div class="source-chip"><span>📰</span> The Daily Star (Industry)</div>
+        <div class="source-chip"><span>💼</span> Indeed BD — ChE Jobs</div>
+        <div class="source-chip"><span>💼</span> BDJOBS — Engineering</div>
+        <div class="source-chip"><span>🤖</span> Powered by Gemini AI</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">CENTRAL RESOURCES</div>
+      <div class="footer-links">
+        <a href="library.html">Library</a>
+        <a href="notes.html">Notes</a>
+        <a href="vault.html">Vault</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="feed.html">Feed</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
+    </div>
+  </footer>
+
+  <script src="js/feed.js"></script>
+</body>
+</html>

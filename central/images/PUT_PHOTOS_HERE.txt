@@ -1,0 +1,12 @@
+DROP PROFILE PHOTOS HERE.
+
+Naming rules:
+- Your photo (About page + your profile): founder.jpg
+- Each contributor's photo:               {their-id}.jpg
+
+Examples:
+  founder.jpg       → shows on About page and profile.html?id=founder
+  rafiq.jpg         → shows on profile.html?id=rafiq
+  contributor-1.jpg → shows on profile.html?id=contributor-1
+
+Any square JPG or PNG works. Emoji fallback shows if photo is missing.
