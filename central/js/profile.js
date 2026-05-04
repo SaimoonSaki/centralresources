@@ -1,4 +1,7 @@
-// profile.js — URL: profile.html?id=founder  |  profile.html?id=rafiq
+// profile.js — Central Resources
+// Fixed: note cover images now render properly
+// Fixed: contributor photo is large and prominent
+
 document.addEventListener("DOMContentLoaded", () => {
   const { CONTRIBUTORS, getBadge } = window.LEADERBOARD;
   const { NOTES } = window.CATALOG;
@@ -13,24 +16,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const rank = sorted.findIndex(c => c.id === id) + 1;
   const badge = getBadge(contributor.uploads);
 
-  document.title = contributor.name + " — GOAT Publications";
+  document.title = contributor.name + " — Central Resources";
   document.getElementById("profileNotFound").style.display = "none";
   document.getElementById("profilePage").style.display = "block";
 
-  // Photo — auto-loads from images/{id}.jpg
-  document.getElementById("profilePhoto").src = "images/" + contributor.id + ".jpg";
-  document.getElementById("profileEmoji").textContent = contributor.emoji || "👤";
+  // PHOTO — loads images/{id}.jpg automatically, falls back to emoji
+  const photoEl = document.getElementById("profilePhoto");
+  const fallbackEl = document.getElementById("profilePhotoFallback");
+  photoEl.src = "images/" + contributor.id + ".jpg";
+  photoEl.alt = contributor.name;
+  photoEl.onload = function() {
+    photoEl.style.display = "block";
+    fallbackEl.style.display = "none";
+  };
+  photoEl.onerror = function() {
+    photoEl.style.display = "none";
+    fallbackEl.style.display = "flex";
+    fallbackEl.textContent = contributor.emoji || "👤";
+  };
 
-  // Rank badge (coloured circle bottom-right of avatar)
+  // Rank badge
   const rb = document.getElementById("profileRankBadge");
   rb.textContent = "#" + rank;
   rb.style.background = badge.color;
   rb.style.color = "#0b0b08";
 
-  // Big background rank number
+  // BG rank
   const bgRank = document.getElementById("profileBgRank");
-  bgRank.textContent = "#" + rank;
-  bgRank.style.webkitTextStrokeColor = badge.color;
+  if (bgRank) {
+    bgRank.textContent = "#" + rank;
+    bgRank.style.webkitTextStrokeColor = badge.color;
+  }
 
   // Hero text
   document.getElementById("profileRole").textContent = "// " + contributor.role;
@@ -40,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subjectsEl = document.getElementById("profileSubjects");
   if (contributor.subjects && contributor.subjects.length) {
     subjectsEl.innerHTML = contributor.subjects
-      .map(s => `<span class="profile-subject-pill">${s}</span>`).join("");
+      .map(s => '<span class="profile-subject-pill">' + s + '</span>').join("");
   }
 
   // Stats
@@ -50,13 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
   sb.style.color = badge.color;
   document.getElementById("statRank").textContent = "#" + rank;
 
-  // Their note/quote
+  // Quote
   if (contributor.note) {
     document.getElementById("profileNoteWrap").style.display = "block";
     document.getElementById("profileNoteText").textContent = '"' + contributor.note + '"';
   }
 
-  // Their uploads from NOTES
+  // Their uploads with proper cover support
   const theirNotes = NOTES.filter(n => n.contributorId === id);
   const grid = document.getElementById("profileNotesGrid");
   const emptyEl = document.getElementById("profileEmpty");
@@ -71,43 +87,57 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = theirNotes.map(renderNoteCard).join("");
   }
 
-  // Other contributors grid
+  // Other contributors
   const others = CONTRIBUTORS.filter(c => c.id !== id).slice(0, 6);
-  document.getElementById("profileOthersGrid").innerHTML = others.map(c => {
+  document.getElementById("profileOthersGrid").innerHTML = others.map(function(c) {
     const b = getBadge(c.uploads);
-    return `<a href="profile.html?id=${c.id}" class="profile-other-card">
-      <div class="profile-other-avatar">
-        <img src="images/${c.id}.jpg" alt="${c.name}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="profile-other-fallback" style="display:none;">${c.emoji||"👤"}</div>
-      </div>
-      <div class="profile-other-name">${c.name}</div>
-      <div class="profile-other-badge" style="color:${b.color}">${b.label}</div>
-      <div class="profile-other-uploads">${c.uploads} uploads</div>
-    </a>`;
+    return '<a href="profile.html?id=' + c.id + '" class="profile-other-card">' +
+      '<div class="profile-other-avatar">' +
+        '<img src="images/' + c.id + '.jpg" alt="' + c.name + '" ' +
+          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
+        '<div class="profile-other-fallback" style="display:none;">' + (c.emoji || "👤") + '</div>' +
+      '</div>' +
+      '<div class="profile-other-name">' + c.name + '</div>' +
+      '<div class="profile-other-badge" style="color:' + b.color + '">' + b.label + '</div>' +
+      '<div class="profile-other-uploads">' + c.uploads + ' uploads</div>' +
+    '</a>';
   }).join("");
 });
 
 function renderNoteCard(item) {
   const sub = item.subject.replace(/-/g, " ");
-  return `<div class="note-card">
-    <div class="note-card-cover">
-      <span class="note-cover-sym">${item.cover||"📝"}</span>
-      <span class="card-badge">${item.type.toUpperCase()}</span>
-    </div>
-    <div class="note-card-body">
-      <div class="note-meta-row">
-        <span class="card-subject">${sub}</span>
-        <span class="note-date">${formatDate(item.date)}</span>
-      </div>
-      <h3 class="card-title">${item.title}</h3>
-      <p class="card-desc">${item.desc}</p>
-      <div class="note-footer">
-        <div class="note-tags">${(item.tags||[]).slice(0,3).map(t=>`<span class="tag">#${t}</span>`).join("")}</div>
-        <a href="${item.file}" download class="card-dl">↓ Download</a>
-      </div>
-    </div>
-  </div>`;
+  const isImage = item.cover && (
+    item.cover.startsWith("http") ||
+    item.cover.startsWith("covers/") ||
+    /\.(jpg|jpeg|png|webp|gif)$/i.test(item.cover)
+  );
+  const coverHtml = isImage
+    ? '<img src="' + item.cover + '" alt="' + item.title + '" class="card-cover-img" loading="lazy" ' +
+      'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
+      '<span class="note-cover-sym" style="display:none;">📝</span>'
+    : '<span class="note-cover-sym">' + (item.cover || "📝") + '</span>';
+
+  return '<div class="note-card">' +
+    '<div class="note-card-cover">' + coverHtml +
+      '<span class="card-badge">' + item.type.toUpperCase() + '</span>' +
+    '</div>' +
+    '<div class="note-card-body">' +
+      '<div class="note-meta-row">' +
+        '<span class="card-subject">' + sub + '</span>' +
+        '<span class="note-date">' + formatDate(item.date) + '</span>' +
+      '</div>' +
+      '<h3 class="card-title">' + item.title + '</h3>' +
+      '<p class="card-desc">' + item.desc + '</p>' +
+      '<div class="note-footer">' +
+        '<div class="note-tags">' +
+          (item.tags || []).slice(0,3).map(function(t){ return '<span class="tag">#' + t + '</span>'; }).join("") +
+        '</div>' +
+        '<a href="' + item.file + '" ' +
+          (item.file.startsWith("http") ? 'target="_blank" rel="noopener"' : 'download') +
+          ' class="card-dl">↓ Download</a>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
 }
 
 function formatDate(str) {
@@ -117,9 +147,10 @@ function formatDate(str) {
 
 function formatJoined(str) {
   if (!str) return "—";
-  const [year, month] = str.split("-");
+  const parts = str.split("-");
+  const year = parts[0], month = parts[1];
   const m = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  return (m[parseInt(month)-1]||"") + " " + year;
+  return (m[parseInt(month) - 1] || "") + " " + year;
 }
 
 function showNotFound() {
