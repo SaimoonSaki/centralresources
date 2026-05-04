@@ -37,7 +37,7 @@ const BOOKS = [
     author: "Roger A. Arnold",
     subject: "Economics",
     type: "book",
-    year: "2018",
+    year: "2nd Year",
     edition: "13rd Edition",
     file: "https://mega.nz/file/Lc0iyQQI#ZVZCNaOARveEBEkI3Ylkf9B5B5ZlPh_5uRo028QMz_U",
     cover: "https://www.cengage.com/covers/imageServlet?image_type=LRGFC&catalog=cengage&productISBN13=9781337617383",
@@ -51,27 +51,27 @@ const BOOKS = [
     author: "Roger A. Arnold",
     subject: "Economics",
     type: "book",
-    year: "2016",
+    year: "2nd Year",
     edition: "8th Edition",
-    file: "books/Economics 8th ed.pdf",
+    file: "https://mega.nz/file/CN1kGK4I#XbiXwwuJERHG8mBRAu4PwYlw2lzoccIS3hHziH_d9p8",
     cover: "https://books.google.com.vc/books/content?id=9-wGxBXFKNIC&printsec=frontcover&img=1&zoom=5",
     desc: "GDP GNP Unemployment is much more decorated here, read these topics from here",
     featured: true,
-    tags: ["CRE", "CSTR", "PFR", "batch", "kinetics"]
+    tags: ["Eco", "Economics", "Roger", "Arnold", "13"]
   },
   {
-    id: "cengel-fluid",
-    title: "Fluid Mechanics: Fundamentals and Applications",
-    author: "Cengel & Cimbala",
-    subject: "fluid-mechanics",
+    id: "Economic Development 12th Edition",
+    title: "Economic Development",
+    author: "Micheal P. Todaro, Stephen C. Smith",
+    subject: "Economics",
     type: "book",
-    year: "2017",
-    edition: "4th Ed.",
-    file: "books/cengel-fluid-4e.pdf",
-    cover: "https://covers.openlibrary.org/b/isbn/9781259695056-L.jpg",
+    year: "2nd year",
+    edition: "12th Edition",
+    file: "https://mega.nz/file/LElFSYjC#J2kPUj_ZWNU8ch-x91Df_iFvLVJFjPyB_4ZPxS3iYFE",
+    cover: "https://www.pearson.com/store/pmccommercewebservices/v2/medias/size-W370-bigcovers-0133406784.jpg?context=bWFzdGVyfGltYWdlc3w5OTA3NXxpbWFnZS9qcGVnfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhNi9oNzQvMTUwNDY5ODIwNzQzOTgvc2l6ZV9XMzcwXy9iaWdjb3ZlcnMvMDEzMzQwNjc4NC5qcGd8OWIzYmVhYmU1Y2FiNDYwNWUyNzcxNGI1MGViYTI1NzViYTIyMDUwNmI1MGU4YTEzNWRiZGQyOTk4YTVmYTI0ZA&imwidth=640",
     desc: "Clear, comprehensive intro to fluid mechanics. Great for both theory and practical application.",
     featured: true,
-    tags: ["Bernoulli", "pipe flow", "turbulence", "viscosity"]
+    tags: ["development", "Eco", "Economics", "economics"]
   },
   // ── ADD YOUR BOOKS BELOW ──────────────────────────────────────
   // {
