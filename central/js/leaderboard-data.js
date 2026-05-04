@@ -15,14 +15,14 @@
 
 const CONTRIBUTORS = [
   {
-    id: "founder",
-    name: "Example",                    // ← replace with your name
-    role: "Founder & Curator",
-    uploads: 12,
-    subjects: ["Thermodynamics", "Fluid Mechanics", "Reaction Engineering"],
+    id: "Adib",
+    name: "Shahriar Alom Adib",                    // ← replace with your name
+    role: "2023332019, CEP-31",
+    uploads: 1,
+    subjects: ["Class Rank 4th", "Leading Contributor"],
     joined: "2026-04",
-    note: "Isn't it cute?",
-    emoji: "under construction",
+    note: "I used to be an asshole but now I am good guy",
+    emoji: "🐐",
   },
   {
     id: "contributor-1",
