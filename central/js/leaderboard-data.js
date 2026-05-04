@@ -22,7 +22,7 @@ const CONTRIBUTORS = [
     subjects: ["Class Rank 5th", "Leading Contributor"],
     joined: "Currently Studying on 4th Semester",
     note: "I used to be an asshole but now I am good guy",
-    emoji: "https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/article_thumbnails/BigBead/down_syndrome_bigbead/1800x1200_down_syndrome_bigbead_alt.jpg?resize=750px:*&output-quality=75",
+    emoji: "dick",
   },
   {
     id: "contributor-1",
