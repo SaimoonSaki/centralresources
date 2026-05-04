@@ -339,62 +339,6 @@ const BOOKS = [
     featured: false,
     tags: ["Polymerization", "polymer", "principles of polymerization", "Gowariker"]
   },
-  {
-    id: "Sociology-schaefer",
-    title: "Sociology",
-    author: "Richard T. Schaefer, Robert P. Lamm",
-    subject: "Industrial Sociology",
-    type: "book",
-    year: "1st Semester",
-    edition: "2nd Year",
-    file: "https://mega.nz/file/6VkzEBBY#sljb3A9czmaHgE8boWaeoIGwpDkeFXHcknxDav8zHqE",
-    cover: "https://m.media-amazon.com/images/I/51gD69RdjCL._AC_UF894,1000_QL80_.jpg",
-    desc: "Depends on your teacher",
-    featured: true,
-    tags: ["Sociology", "social", "industrial", "schaefer"]
-  },
-  {
-    id: "Sociology-schaefer",
-    title: "Sociology",
-    author: "Richard T. Schaefer, Robert P. Lamm",
-    subject: "Industrial Sociology",
-    type: "book",
-    year: "1st Semester",
-    edition: "2nd Year",
-    file: "https://mega.nz/file/6VkzEBBY#sljb3A9czmaHgE8boWaeoIGwpDkeFXHcknxDav8zHqE",
-    cover: "https://m.media-amazon.com/images/I/51gD69RdjCL._AC_UF894,1000_QL80_.jpg",
-    desc: "Depends on your teacher",
-    featured: true,
-    tags: ["Sociology", "social", "industrial", "schaefer"]
-  },
-  {
-    id: "Sociology-schaefer",
-    title: "Sociology",
-    author: "Richard T. Schaefer, Robert P. Lamm",
-    subject: "Industrial Sociology",
-    type: "book",
-    year: "1st Semester",
-    edition: "2nd Year",
-    file: "https://mega.nz/file/6VkzEBBY#sljb3A9czmaHgE8boWaeoIGwpDkeFXHcknxDav8zHqE",
-    cover: "https://m.media-amazon.com/images/I/51gD69RdjCL._AC_UF894,1000_QL80_.jpg",
-    desc: "Depends on your teacher",
-    featured: true,
-    tags: ["Sociology", "social", "industrial", "schaefer"]
-  },
-  {
-    id: "Sociology-schaefer",
-    title: "Sociology",
-    author: "Richard T. Schaefer, Robert P. Lamm",
-    subject: "Industrial Sociology",
-    type: "book",
-    year: "1st Semester",
-    edition: "2nd Year",
-    file: "https://mega.nz/file/6VkzEBBY#sljb3A9czmaHgE8boWaeoIGwpDkeFXHcknxDav8zHqE",
-    cover: "https://m.media-amazon.com/images/I/51gD69RdjCL._AC_UF894,1000_QL80_.jpg",
-    desc: "Depends on your teacher",
-    featured: true,
-    tags: ["Sociology", "social", "industrial", "schaefer"]
-  },
   // ── ADD YOUR BOOKS BELOW ──────────────────────────────────────
   // {
   //   id: "unique-id",
