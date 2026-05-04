@@ -19,10 +19,10 @@ const CONTRIBUTORS = [
     name: "Shahriar Alom Adib",                    // ← replace with your name
     role: "2023332019, CEP-31",
     uploads: 1,
-    subjects: ["Class Rank 4th", "Leading Contributor"],
-    joined: "2026-04",
+    subjects: ["Class Rank 5th", "Leading Contributor"],
+    joined: "Currently Studying on 4th Semester",
     note: "I used to be an asshole but now I am good guy",
-    emoji: "🐐",
+    emoji: "https://instagram.fdac24-2.fna.fbcdn.net/v/t51.82787-19/629308264_17848010367682064_4364005542172572528_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45NjAuYzIifQ&_nc_ht=instagram.fdac24-2.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2gG5oZFAovEZ0iS5ip7c7S_p1H56Cq6C6Q2wZPdwgjba7aj0GtRtvhIZTx8DzfkSjLI&_nc_ohc=cus9T44mLsMQ7kNvwH9EnrP&_nc_gid=jEMNN1L9Y40iyJOV3CbcOA&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_Af7TGRr38IF2Ji_9wkVSDbdRwmnAp4rbMHLvk5G3zXXBJg&oe=69FE349D&_nc_sid=7d3ac5",
   },
   {
     id: "contributor-1",
