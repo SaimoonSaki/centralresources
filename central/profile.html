@@ -33,43 +33,50 @@
     </div>
   </header>
 
-  <!-- NOT FOUND state -->
+  <!-- NOT FOUND -->
   <div id="profileNotFound" style="display:none;">
     <div class="profile-notfound">
       <div class="empty-icon">🔍</div>
       <h2 class="profile-nf-title">Contributor not found</h2>
       <p class="profile-nf-desc">No one by that ID exists in the archive yet.</p>
-      <a href="leaderboard.html" class="btn-primary" style="margin-top:12px;">← Back to Leaderboard</a>
+      <a href="leaderboard.html" class="btn-primary" style="margin-top:16px;">← Back to Leaderboard</a>
     </div>
   </div>
 
-  <!-- PROFILE state -->
+  <!-- PROFILE PAGE -->
   <div id="profilePage" style="display:none;">
 
+    <!-- ── HERO with BIG photo ── -->
     <div class="profile-hero">
       <div class="profile-hero-bg-rank" id="profileBgRank"></div>
       <div class="profile-hero-inner">
 
-        <div class="profile-avatar-wrap">
-          <div class="profile-avatar">
+        <!-- LEFT: big photo column -->
+        <div class="profile-photo-col">
+          <div class="profile-photo-frame">
             <!--
-              Photo loads automatically from images/{contributor-id}.jpg
-              e.g. for id="rafiq" → put images/rafiq.jpg in the images/ folder
-              If no photo → emoji shows instead
+              Photo loads automatically from:  images/{contributor-id}.jpg
+              e.g. for id="rafiq" → upload images/rafiq.jpg to GitHub
+              If no photo → their emoji shows instead. Nothing breaks.
             -->
             <img
               id="profilePhoto"
-              class="profile-photo"
+              class="profile-photo-big"
               alt="Profile photo"
-              onerror="this.style.display='none';document.getElementById('profilePhotoFallback').style.display='flex';"
+              style="display:none;"
             />
-            <div class="profile-photo-fallback" id="profilePhotoFallback">
-              <span id="profileEmoji">👤</span>
-            </div>
+            <div
+              id="profilePhotoFallback"
+              class="profile-photo-fallback-big"
+              style="display:none;"
+            ></div>
           </div>
-          <div class="profile-rank-badge" id="profileRankBadge"></div>
+
+          <!-- Rank badge under photo -->
+          <div class="profile-photo-rank" id="profileRankBadge"></div>
         </div>
 
+        <!-- RIGHT: name + info -->
         <div class="profile-hero-text">
           <div class="section-tag" id="profileRole"></div>
           <h1 class="profile-name" id="profileName"></h1>
@@ -91,7 +98,7 @@
       <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Impact</span></div>
     </div>
 
-    <!-- Their quote/note -->
+    <!-- Their quote -->
     <div class="profile-note-wrap" id="profileNoteWrap" style="display:none;">
       <div class="profile-note-inner">
         <div class="profile-note-label">// In their own words</div>
@@ -124,7 +131,7 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- /profilePage -->
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -134,6 +141,7 @@
         <a href="notes.html">Notes</a>
         <a href="vault.html">Vault</a>
         <a href="leaderboard.html">Leaderboard</a>
+        <a href="feed.html">Feed</a>
         <a href="about.html">About</a>
       </div>
       <div class="footer-copy">Built free. Hosted free. Knowledge free.</div>
@@ -142,6 +150,7 @@
 
   <script src="js/catalog.js"></script>
   <script src="js/leaderboard-data.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/profile.js"></script>
 </body>
 </html>
