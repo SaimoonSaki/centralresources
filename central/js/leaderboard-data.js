@@ -37,11 +37,21 @@ const CONTRIBUTORS = [
   {
     id: "Rafia",
     name: "Rafia Farjana",
-    role: "2023332051, CEP-51",
+    role: "2023332051, CEP-31",
     uploads: 5,
     subjects: ["3rd CR, Consistent Note Provider"],
     joined: "1st Semester",
     note: "The consistency on giving notes is appreciable",
+    emoji: "⚙️",
+  },
+  {
+    id: "Shikhon",
+    name: "Shikhon Saha",
+    role: "2023332002, CEP-31",
+    uploads: 2,
+    subjects: ["one of the nicest note maker"],
+    joined: "1st Semester",
+    note: "He does really nice notes, but I don't know why he doesn't give?",
     emoji: "⚙️",
   },
   // ── ADD CONTRIBUTORS BELOW ────────────────────────────────────
