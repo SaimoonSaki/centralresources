@@ -180,8 +180,8 @@ const NOTES = [
     type: "handwritten",
     date: "04/05/2026",
     file: "https://mega.nz/file/bddTgRRB#YyioMtG5egrsQMxcHAtQoZAWR1HzZJanPU_mbwJDKy0",
-    cover: "https://biophysics.princeton.edu/sites/g/files/toruqf2306/files/styles/freeform_750w/public/2024-09/fluid_mechanics_in_living_systems.png?itok=J2wfQcAR",
-    desc: "Course teacher was Muntaha Rakib Ma'am of Economics Department. And Shahriar Alom noted these all, he's very attentive",
+    cover: "https://developingeconomics.org/wp-content/uploads/2021/11/economy-862x796-1.jpg",
+    desc: "Course Teacher: Prof. Dr. Muntaha Rakib",
     featured: true,
     tags: ["economics", "muntaha rakib", "economics"]
   },
