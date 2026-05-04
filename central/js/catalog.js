@@ -57,7 +57,7 @@ const BOOKS = [
     cover: "https://books.google.com.vc/books/content?id=9-wGxBXFKNIC&printsec=frontcover&img=1&zoom=5",
     desc: "GDP GNP Unemployment is much more decorated here, read these topics from here",
     featured: true,
-    tags: ["Eco", "Economics", "Roger", "Arnold", "13"]
+    tags: ["Eco", "Economics", "Roger", "Arnold", "8"]
   },
   {
     id: "advanced-differential-equation",
@@ -98,36 +98,36 @@ const BOOKS = [
     file: "https://mega.nz/file/vYV2zLTZ#WUuLuBNhQ4hFfHlr_cRov3xez0mw4kSK1WAYOb4jbXk",
     cover: "https://imgv2-2-f.scribdassets.com/img/document/359330153/298x396/80065f8974/1702726263?v=1",
     desc: "You can learn solving ordinary DE, homogeneous, non-homogenous, solving power series from this book, very versatile",
-    featured: true,
+    featured: false,
     tags: ["differential", "equation", "DE", "calculus", "partial", "integration"]
   },
   {
-    id: "Economic Development 12th Edition",
-    title: "Economic Development 12e",
-    author: "Micheal P. Todaro, Stephen C. Smith",
-    subject: "Economics",
-    type: "book",
+    id: "differential-equation-shepley-4e-solve",
+    title: "Differential Equations Solution 4e",
+    author: "Shepley L. Ross",
+    subject: "Differential Equation",
+    type: "Solution",
     year: "1st Semester",
     edition: "2nd Year",
-    file: "https://mega.nz/file/LElFSYjC#J2kPUj_ZWNU8ch-x91Df_iFvLVJFjPyB_4ZPxS3iYFE",
-    cover: "https://www.pearson.com/store/pmccommercewebservices/v2/medias/size-W370-bigcovers-0133406784.jpg?context=bWFzdGVyfGltYWdlc3w5OTA3NXxpbWFnZS9qcGVnfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhNi9oNzQvMTUwNDY5ODIwNzQzOTgvc2l6ZV9XMzcwXy9iaWdjb3ZlcnMvMDEzMzQwNjc4NC5qcGd8OWIzYmVhYmU1Y2FiNDYwNWUyNzcxNGI1MGViYTI1NzViYTIyMDUwNmI1MGU4YTEzNWRiZGQyOTk4YTVmYTI0ZA&imwidth=640",
-    desc: "Clear, comprehensive intro to fluid mechanics. Great for both theory and practical application.",
-    featured: true,
-    tags: ["development", "Eco", "Economics", "economics"]
+    file: "https://mega.nz/file/bMMRGDaZ#o5oTWmmC369PDQQCcA6DAm2-8E9wI7NyxREHBPi8_6I",
+    cover: "https://media.wiley.com/product_data/coverImage300/17/04710988/0471098817.jpg",
+    desc: "solution book, but I'd suggest using claude to solve math, it's far better!(advertised by Saki)",
+    featured: false,
+    tags: ["differential", "equation", "DE", "calculus", "partial", "integration"]
   },
   {
-    id: "Economic Development 12th Edition",
-    title: "Economic Development 12e",
-    author: "Micheal P. Todaro, Stephen C. Smith",
-    subject: "Economics",
+    id: "Schaum's-Outline-of-Laplace-Transforms",
+    title: "Schaum's Outline of Laplace Transforms",
+    author: "Murray R. Spiegel",
+    subject: "Differential Equation",
     type: "book",
     year: "1st Semester",
     edition: "2nd Year",
-    file: "https://mega.nz/file/LElFSYjC#J2kPUj_ZWNU8ch-x91Df_iFvLVJFjPyB_4ZPxS3iYFE",
-    cover: "https://www.pearson.com/store/pmccommercewebservices/v2/medias/size-W370-bigcovers-0133406784.jpg?context=bWFzdGVyfGltYWdlc3w5OTA3NXxpbWFnZS9qcGVnfHN5cy1tYXN0ZXIvaW1hZ2VzL2hhNi9oNzQvMTUwNDY5ODIwNzQzOTgvc2l6ZV9XMzcwXy9iaWdjb3ZlcnMvMDEzMzQwNjc4NC5qcGd8OWIzYmVhYmU1Y2FiNDYwNWUyNzcxNGI1MGViYTI1NzViYTIyMDUwNmI1MGU4YTEzNWRiZGQyOTk4YTVmYTI0ZA&imwidth=640",
-    desc: "Clear, comprehensive intro to fluid mechanics. Great for both theory and practical application.",
-    featured: true,
-    tags: ["development", "Eco", "Economics", "economics"]
+    file: "https://mega.nz/file/GF1HVQAY#qFsXFkNyBTbybQk_5JwXzaYnT8qST6mbWczAdC_D4bQ",
+    cover: "https://m.media-amazon.com/images/I/61ZjRobDGUL._AC_UF350,350_QL50_.jpg",
+    desc: "here you will find laplace transforms and fourier as well, fourier is not taught that deeply, you can learn from anywhere",
+    featured: false,
+    tags: ["differential", "equation", "DE", "calculus", "partial", "integration", "laplace", "fourier", "series"]
   },
   {
     id: "Economic Development 12th Edition",
