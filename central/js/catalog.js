@@ -366,7 +366,8 @@ const BOOKS = [
     desc: "Solution for 6e",
     featured: false,
     tags: ["thermodynamics", "thermo", "4th semester", "JM Smith","6th edition","Solution"]
-  {
+    },
+    {
     id: "Thermo-engineering-approach",
     title: "Thermodynamics: An Engineering Approach 5e",
     author: "Michael A. Boles, Yunus A Çengel",
