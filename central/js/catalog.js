@@ -335,7 +335,7 @@ const BOOKS = [
     edition: "2nd Year",
     file: "https://mega.nz/file/SEV11YzL#USigKNCsry0OAbBOhUA5XtpQ8uvTSIFVPfc_ghlVN28",
     cover: "https://images.thenile.io/r1000/9781259696527.jpg",
-    desc: "Solution: https://fliphtml5.com/vvba/anrl/Introduction_to_Chemical_Engineering_Thermodynamics_Solution_Manual/",
+    desc: "source 21-22 batch",
     featured: true,
     tags: ["thermodynamics", "thermo", "4th semester", "JM Smith"]
   },
@@ -377,7 +377,7 @@ const BOOKS = [
     edition: "2nd Year",
     file: "https://abdulkadir.blog.uma.ac.id/wp-content/uploads/sites/445/2019/09/Thermodynamics-an-engineering-approach-5th-edition.pdf",
     cover: "https://m.media-amazon.com/images/I/51tyLMWQObL._AC_UF1000,1000_QL80_.jpg",
-    desc: "solution: https://www.slideshare.net/slideshow/vdocumentsmxthermodynamicsanengineeringapproach5thedsolutionpdf/266383992",
+    desc: "source 21-22 batch",
     featured: false,
     tags: ["thermo", "thermodynamics", "cengel", "5th edition","4th semester"]
   },
