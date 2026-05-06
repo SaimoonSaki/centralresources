@@ -339,6 +339,20 @@ const BOOKS = [
     featured: true,
     tags: ["thermodynamics", "thermo", "4th semester", "JM Smith"]
   },
+   {
+    id: "intro-to-chemical-thermo-7",
+    title: "Introduction to Chemical Engineering Thermodynamics 7e",
+    author: "J. M. Smith, Van Ness, Abbott",
+    subject: "Thermodynamics",
+    type: "book",
+    year: "2nd Semester",
+    edition: "2nd Year",
+    file: "https://mega.nz/file/yM0AwaqS#HLTR_f580Lp53YCc95ci7F4reI9JyCNe93Ynnvpil9k",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBMNW10tSoTbhRksOFGmghOkI9yHGtVVwo9Q&s",
+    desc: "source 22-23 batch",
+    featured: false,
+    tags: ["thermodynamics", "thermo", "4th semester", "JM Smith"]
+  },
   {
     id: "intro-to-chemical-thermo-6",
     title: "Introduction to Chemical Engineering Thermodynamics 6e",
@@ -363,6 +377,20 @@ const BOOKS = [
     edition: "2nd Year",
     file: "https://mega.nz/file/KEEQwYyT#mV0QV-29b1d8X-f4C4RpP2L05yxa4j4Oz8-vwGqoZwQ",
     cover: "https://pictures.abebooks.com/isbn/9780072402964-uk.jpg",
+    desc: "Solution for 6e",
+    featured: false,
+    tags: ["thermodynamics", "thermo", "4th semester", "JM Smith","6th edition","Solution"]
+    },
+    {
+    id: "intro-to-chemical-thermo-7-solve",
+    title: "Introduction to Chemical Engineering Thermodynamics 7e Solution",
+    author: "J. M. Smith, Van Ness, Abbott",
+    subject: "Thermodynamics",
+    type: "Solution",
+    year: "2nd Semester",
+    edition: "2nd Year",
+    file: "https://mega.nz/file/XJNWhA4D#5ZJEbaf9hhFjYqO2Iktv9I3XlyJncRc0TEE9KUkKE3c",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqjJE9QbgNSNW_ZbvkkLiJrA2GlJcrdcRG4w&s",
     desc: "Solution for 6e",
     featured: false,
     tags: ["thermodynamics", "thermo", "4th semester", "JM Smith","6th edition","Solution"]
@@ -438,29 +466,29 @@ const BOOKS = [
     tags: ["Heat", "Transfer", "Holman", "4th Semester","solution"]
   },
   {
-    id: "heat-transfer-holman",
-    title: "Heat Transfer 10e",
-    author: "J.P. Holman",
+    id: "process-heat-transfer-kern",
+    title: "Process Heat Transfer",
+    author: "D.Q. Kern",
     subject: "Heat Transfer",
     type: "book",
     year: "2nd Semester",
     edition: "2nd Year",
-    file: "https://coeng.uobaghdad.edu.iq/wp-content/uploads/sites/3/uploads/ammar%20data%202017/lectures/chemistry/clases/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84%20%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B1%D8%AD%D9%84%D8%A9%20%D8%AB%D8%A7%D9%84%D8%AB%D8%A9/Heat%20Transfer,%20Tenth%20Edition.pdf",
-    cover: "https://m.media-amazon.com/images/I/51bkLPqtBSL._AC_UF1000,1000_QL80_.jpg",
+    file: "https://mega.nz/file/yc9BwC5a#F9ibm_ydPkh_FqkEtZ2rvWS4lfyodoaNDyUht2T3Ajs",
+    cover: "https://online.fliphtml5.com/zroi/dtki/files/thumb/1.webp",
     desc: "Depends on your course teacher",
     featured: true,
-    tags: ["Heat", "Transfer", "Holman", "4th Semester"]
+    tags: ["Heat", "Transfer", "process","Kern", "4th Semester"]
   },
   {
     id: "heat-transfer-cengel",
-    title: "Heat Transfer: A Practical Approach",
+    title: "Heat Transfer: A Practical Approach 2e",
     author: "Yunus A. Cengel",
     subject: "Heat Transfer",
     type: "book",
     year: "2nd Semester",
     edition: "2nd Year",
-    file: "",
-    cover: "",
+    file: "https://mega.nz/file/WYcwEaIQ#x665XYUpneQHK9YLYWC2WoeGETua5YVAr8aPwHj6XWk",
+    cover: "https://imgv2-2-f.scribdassets.com/img/document/76358132/original/02ae1ca4b8/1?v=1",
     desc: "Depends on your course teacher",
     featured: false,
     tags: ["Heat", "Transfer", "cengel", "4th Semester"]
@@ -473,8 +501,8 @@ const BOOKS = [
     type: "book",
     year: "2nd Semester",
     edition: "2nd Year",
-    file: "",
-    cover: "",
+    file: "https://mega.nz/file/bUMgmQhY#FX3ARRRUw4QxbnSVKP1vgfcr7h57l8ePK9Mrir4GCrM",
+    cover: "https://m.media-amazon.com/images/I/41E2929H0TL._AC_UF1000,1000_QL80_.jpg",
     desc: "Depends on your course teacher",
     featured: false,
     tags: ["Heat", "Transfer", "ozisik", "4th Semester"]
@@ -716,6 +744,34 @@ const NOTES = [
     desc: "Course Teacher: Dr Shamsun Naher Begum",
     featured: false,
     tags: ["differential", "Fourier", "Partial", "homogenous equation"]
+  },
+  {
+    id: "python-full-slide-22-23",
+    title: "Python Full Slide (22-23)",
+    contributor: "Faculty Md. Shymon Islam",
+    contributorId: "",
+    subject: "Python Lab",
+    type: "slide",
+    date: "06/05/2026",
+    file: "https://mega.nz/file/iY1GTJrb#4rgVdW1yf1PTIzDenS9Pr6znmMMY1M8JGtMktDw_HXc",
+    cover: "https://www.developer-tech.com/wp-content/uploads/2025/08/python-in-2025-language-developers-web-development-coding-programming-data-science-research-report-study.jpg",
+    desc: "Course Teacher: Md. Shymon Islam",
+    featured: false,
+    tags: ["python", "CSE", "python slide", "4th semester"]
+  },
+  {
+    id: "python-full-slide-22-23",
+    title: "Python Full Slide (22-23)",
+    contributor: "Faculty Md. Shymon Islam",
+    contributorId: "",
+    subject: "Python Lab",
+    type: "slide",
+    date: "06/05/2026",
+    file: "https://mega.nz/file/iY1GTJrb#4rgVdW1yf1PTIzDenS9Pr6znmMMY1M8JGtMktDw_HXc",
+    cover: "https://www.developer-tech.com/wp-content/uploads/2025/08/python-in-2025-language-developers-web-development-coding-programming-data-science-research-report-study.jpg",
+    desc: "Course Teacher: Md. Shymon Islam",
+    featured: false,
+    tags: ["python", "CSE", "python slide", "4th semester"]
   },
   // ── ADD COMMUNITY NOTES BELOW ─────────────────────────────────
   // {
